@@ -12,7 +12,7 @@
   <arg name="debug" default="false"/>
   <arg name="physics" default="ode"/>
   <arg name="verbose" default="false"/>
-  <arg name="world_name" value="$(find exp_assignment3)/worlds/$(arg world).world"/>
+  <arg name="world_name" value="$(find exprob_assignment3)/worlds/$(arg world).world"/>
   <arg name="respawn_gazebo" default="false"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>
@@ -41,6 +41,9 @@
   <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
   </group>
+
+  <include file="$(find exprob_assignment3)/launch/gazebo.launch"></include>
+  
 
 
 </launch>
