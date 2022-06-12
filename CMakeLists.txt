@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   erl2
   message_generation
+  actionlib
+  move_base
 )
 
 ## System dependencies are found with CMake's conventions
@@ -71,6 +73,7 @@ find_package(catkin REQUIRED COMPONENTS
  generate_messages(
    DEPENDENCIES
    erl2  # Or other packages containing msgs
+   actionlib
  )
 
 ################################################
@@ -159,10 +162,10 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# catkin_install_python(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+ catkin_install_python(PROGRAMS
+   scripts/fsm.py
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
